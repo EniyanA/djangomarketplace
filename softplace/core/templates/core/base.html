@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #92d8c4; /* Dark blue color */
+            min-height: 100vh;
+        }
+    </style>
+    <title>{% block title %}{% endblock %} | SoftPlace</title>
+</head>
+<body>
+    <nav class="py-6 px-6 flex justify-between items-center border-b border-gray-200">
+        <a href="/" class="text-xl font-semibold">SoftPlace</a>
+
+        <div class="space-x-6">
+            {% if request.user.is_authenticated %}
+            <a href="{% url 'core:contact' %}" class="px-6 py-4 text-lg font-semibold text-500 rounded-xl hover:bg-green-500">Contact</a>
+            <a href="{% url 'core:chat' %}" class="px-6 py-4 text-lg font-semibold text-500 rounded-xl hover:bg-gray-700">Chat</a>
+            <a href="" class="px-6 py-4 text-lg font-semibold text-500 rounded-xl hover:bg-green-500">Become a Seller</a>
+            {% else %}
+                <a href="{% url 'core:signup' %}" class="px-6 py-4 text-lg font-semibold text-500 rounded-xl hover:bg-green-500">Sign Up</a>
+                <a href="{% url 'core:login' %}" class="px-6 py-4 text-lg font-semibold text-500 rounded-xl hover:bg-gray-700">Login</a>
+            {% endif %}
+
+        </div>
+    </nav>
+    <div class="px-6 py-6">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <div>
+        <footer class="py-6 px-6 flex justify-between bg-gray-800">
+
+        
+            <div class="w-1/3">
+                <h3 class="mb-5 font-semibold text-gray-400">Menu</h3>
+                <ul class="space-y-2">
+                    <li><a href="{% url 'core:about' %}" class="text-lg text-green-700 hover:text-green-900">About</a></li>
+                    <li><a href="{% url 'core:contact' %}" class="text-lg text-green-700 hover:text-green-900">Contact</a></li>
+                    <li><a href="{% url 'core:privacypol' %}" class="text-lg text-green-700 hover:text-green-900">Privacy policy</a></li>
+                    <li><a href="{% url 'core:termsofuse' %}" class="text-lg text-green-700 hover:text-green-900">Terms of Use</a></li>
+                </ul>
+            </div>
+            <div class="w-2/3 pr-10">
+                <h3 class="mb-5 font-semibold text-gray-400">Community</h3>
+                <ul class="space-y-2">
+                    <li><a href="{% url 'core:socialmedia' %}" class="text-lg text-green-700 hover:text-green-900">Social Media</a></li>
+                    <li><a href="" class="text-lg text-green-700 hover:text-green-900">Careers</a></li>
+                    <li><a href="" class="text-lg text-green-700 hover:text-green-900">Become a Seller</a></li>
+                    <li><a href="" class="text-lg text-green-700 hover:text-green-900">Internships</a></li>
+                </ul>
+            </div>
+
+
+
+            <div class="w-2/3 pr-10">
+                <h3 class="mb-5 font-semibold text-gray-400">Courses</h3>
+                <ul class="space-y-2">
+                    <li><a href="" class="text-lg text-green-700 hover:text-green-900">E-Courses</a></li>
+                    <li><a href="" class="text-lg text-green-700 hover:text-green-900">Pathway to Employment</a></li>
+                </ul>
+            </div>
+
+            <div class="w-2/3 pr-10">
+                <h3 class="mb-5 font-semibold text-gray-400">Others</h3>
+                <ul class="space-y-2">
+                    <li><a href="" class="text-lg text-green-700 hover:text-green-900">Business Collaboration</a></li>
+                    
+                </ul>
+            </div>
+
+            </footer>
+    </div>
+</body>
+</html>

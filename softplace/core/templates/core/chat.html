@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+Chat with Us
+{% endblock %}
+
+{% block content %}
+<div class="py-10 text-center">
+    <h1 class="text-4xl font-bold text-green-700 mb-6">Chat with Us</h1>
+    <p class="text-gray-500 mb-4">Have questions or need assistance in real-time?</p>
+
+    <div class="text-center">
+        <p class="text-lg text-green-700 mb-2">Live Chat</p>
+        <p class="mb-4">Our team is available to chat with you in real-time. Feel free to ask any questions you may have.</p>
+
+        <!-- Tawk.to Chat Widget (Replace with your Tawk.to code) -->
+        <div class="tawk-chat-widget" data-id="YOUR_TAWKTO_CHAT_ID" data-id-mobile="YOUR_TAWKTO_MOBILE_CHAT_ID"></div>
+    </div>
+</div>
+{% endblock %}
