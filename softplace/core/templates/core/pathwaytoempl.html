@@ -1,0 +1,41 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+Pathway to Employment
+{% endblock %}
+
+{% block content %}
+<div class="py-10 text-center mt-6 px-6 py-8 bg-gray-200 rounded-xl shadow-md">
+    <h1 class="text-4xl font-bold text-green-700 mb-6">Explore Your Pathway to Employment</h1>
+    <p class="text-gray-500 mb-4">Discover resources, guidance, and programs designed to help you navigate your journey towards meaningful employment.</p>
+
+    <div class="text-left max-w-prose mx-auto">
+        <h2 class="text-lg text-green-700 mb-2">Why Choose Our Pathway Programs?</h2>
+        <p class="mb-4">
+            Our Pathway to Employment programs are crafted to empower individuals with the skills and knowledge needed to succeed in the workforce. Whether you're a recent graduate or seeking a career change, we have programs tailored to your needs.
+        </p>
+
+        <h2 class="text-lg text-green-700 mb-2">Featured Pathway Programs</h2>
+        <p class="mb-4">
+            Explore some of our featured Pathway Programs below:
+        </p>
+
+        <ul class="list-disc pl-6 text-gray-600 mb-6">
+            <li><a href="" class="text-green-700 hover:underline">Career Readiness Program</a></li>
+            <li><a href="" class="text-green-700 hover:underline">Professional Development Workshop Series</a></li>
+            <!-- Add more featured Pathway Programs as needed -->
+        </ul>
+
+        <h2 class="text-lg text-green-700 mb-2">How to Get Started</h2>
+        <p class="mb-4">
+            Getting started on your Pathway to Employment is easy. Visit the program page, explore the details, and follow the steps to begin your journey toward a fulfilling career.
+        </p>
+
+        <p class="mb-4">
+            If you have any questions or need guidance, feel free to <a href="{% url 'core:contact' %}" class="text-green-700 hover:underline">contact us</a>.
+        </p>
+        <p>Send your Resume/CV, if you are interested for any position at our company via email</p>
+        <a href="mailto:eniya2x2@gmail.com" class="text-green-700 hover:underline">Email: softplace24@gmail.com</a>
+    </div>
+</div>
+{% endblock %}

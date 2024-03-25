@@ -1,0 +1,51 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+Become a Seller
+{% endblock %}
+
+{% block content %}
+<div class="py-10 text-center mt-6 px-6 py-8 bg-gray-200 rounded-xl shadow-md">
+    <h1 class="text-4xl font-bold text-green-700 mb-6">Become a Seller</h1>
+    <p class="text-gray-500 mb-4">Join our platform and showcase your products to a wide audience. Start selling with us today!</p>
+
+    <div class="text-left max-w-prose mx-auto">
+        <h2 class="text-lg text-green-700 mb-2">Why Sell With Us?</h2>
+        <p class="mb-4">
+            Partner with us to reach a larger audience, grow your business, and benefit from our platform's features. We are dedicated to supporting our sellers and fostering a collaborative selling environment.
+        </p>
+
+        <h2 class="text-lg text-green-700 mb-2">How to Get Started</h2>
+        <p class="mb-4">
+            Getting started as a seller is easy. Follow these steps to begin selling on our platform:
+        </p>
+
+        <ol class="list-decimal pl-6 text-gray-600 mb-6">
+            <li>Create an account on our website.</li>
+            <li>Complete the seller registration form.</li>
+            <li>Submit necessary documentation for verification.</li>
+            <li>Set up your seller profile and product listings.</li>
+            <li>Start selling and reaching customers.</li>
+        </ol>
+
+        <h2 class="text-lg text-green-700 mb-2">Seller Benefits</h2>
+        <p class="mb-4">
+            As a seller on our platform, you can enjoy the following benefits:
+        </p>
+
+        <ul class="list-disc pl-6 text-gray-600 mb-6">
+            <li>Access to a broad customer base.</li>
+            <li>Marketing and promotional opportunities.</li>
+            <li>Secure payment processing.</li>
+            <li>Dedicated seller support.</li>
+            <!-- Add more benefits as needed -->
+        </ul>
+
+        <p class="mb-4">
+            Ready to showcase your products and grow your business? <a href="{% url 'core:contact' %}" class="text-green-700 hover:underline">Contact us</a> to become a seller today.
+        </p>
+        <p>Send your Resume/CV, if you are interested for any position at our company via email</p>
+        <a href="mailto:eniya2x2@gmail.com" class="text-green-700 hover:underline">Email: softplace24@gmail.com</a>
+    </div>
+</div>
+{% endblock %}

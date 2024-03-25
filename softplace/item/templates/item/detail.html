@@ -3,36 +3,29 @@
 {% block title %}{{ item.name }}{% endblock %}
 
 {% block content %}
-<div class="grid grid-cols-6 gap-5">
-    <div class="col-span-3">
-        <img src="{{ item.image.url }}" class="rounded-xl">
-        <p class="text-teal-600">|</p>
-        <div class="col-span-3 p-6 bg-gray-700 rounded-xl">
-            <p class="text-2xl text-green-600">About the Seller</p>
-            <p class="text-white">{{ item.created_by }}</p>
-            <p class="text-2xl text-white">Experience:</p>
-            <p class="text-white">{{ item.experience }}</p>
-            <p class="text-2xl text-white">Other Projects::</p>
-            <p class="text-white">{{ item.otherprojects }}</p>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <!-- Product Image and Seller Info -->
+    <div class="p-6 bg-gray-100 rounded-xl">
+        <h1 class="text-3xl mb-4">{{ item.name }}</h1>
+        <p class="text-gray-500 mb-2">Seller: {{ item.created_by }}</p>
+        <p class="text-gray-500 mb-2">Price: ${{ item.price }}</p>
+        <div class="mb-6">
+            <h2 class="text-xl text-green-600 mb-2">About the Seller</h2>
+            <p class="text-gray-700">{{ item.created_by }}</p>
+            <p class="text-gray-700">Experience: {{ item.experience }}</p>
+            <p class="text-gray-700">Other Projects: {{ item.otherprojects }}</p>
         </div>
-        <p class="text-teal-600">|</p>
-        <div class="col-span-3 p-6 bg-gray-700 rounded-xl">
-            <p class="text-2xl text-green-600">Contact the Seller or the Team</p>
-            <p class="text-white">Contact the Seller or Team to discuss furthe about the Software. This would provide you a better outlook of the Software. You can make customization and discuss the pricing and negotiate the price </p>
-            <a href="#" class="inline-block mt-6 px-6 py-6 text-lg font-semibold bg-green-600 text-white hover:green-700 rounded-xl">Contact Seller</a>
+        <div class="mb-6">
+            <h2 class="text-xl text-green-600 mb-2">Contact the Seller or the Team</h2>
+            <p class="text-gray-700">Contact the Seller or Team to discuss further about the Software. This would provide you with a better outlook of the Software. You can make customizations and discuss pricing.</p>
+            <a href="{% url 'core:contact' %}" class="inline-block mt-4 px-6 py-3 text-lg font-semibold bg-green-600 text-white hover:bg-green-700 rounded-xl">Contact Seller</a>
         </div>
     </div>
-    <div class="col-span-3 p-6 bg-gray-100 rounded-xl">
-        <h1 class="mb-6 text-3xl">{{ item.name }}</h1>
-        <p class="text-gray-500">Seller:  {{ item.created_by }} </p>
-        <p class="text-gray-500">Price:  {{ item.price }}$</p>
-        <h1 class="text-3xl">Descritpion:</h1>
-        <p class="nb-1xl">{{ item.description }}</p>
-        <a href="#" class="inline-block mt-6 px-6 py-6 text-lg font-semibold bg-green-600 text-white hover:green-700 rounded-xl">Contact Seller</a>
-
+    <!-- Product Description -->
+    <div class="p-6 bg-gray-700 rounded-xl">
+        <img src="{{ item.image.url }}" class="rounded-lg mb-6">
+        <h2 class="text-2xl text-green-600 mb-4">Description:</h2>
+        <p class="text-gray-100">{{ item.description }}</p>
     </div>
 </div>
-
-
-
 {% endblock %}

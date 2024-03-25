@@ -16,6 +16,21 @@ def index(request):
 def chat(request):
     return render(request, "core/chat.html")
 
+def career(request):
+    return render(request, 'core/career.html')
+
+def ecourses(request):
+    return render(request, 'core/ecourses.html')
+
+def pathwaytoempl(request):
+    return render(request, 'core/pathwaytoempl.html')
+
+def becomeaseller(request):
+    return render(request, 'core/becomeaseller.html')
+
+def internships(request):
+    return render (request, 'core/internships.html')
+
 
 def termsofuse(request):
     return render(request, 'core/termsofuse.html')
@@ -34,6 +49,9 @@ def privacypolicy(request):
 
 def contact(request):
     return render(request, 'core/contact.html')
+
+def buscollaboration(request):
+    return render(request, 'core/buscollaboration.html')
 
 def signup(request):
     if request.method=='POST':

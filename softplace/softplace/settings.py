@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+import django_heroku
+import dj_database_url
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +29,7 @@ SECRET_KEY = 'django-insecure-ehnz%s&t)r$)w8el#(csbh#wi$prplmo0o+w*v9vz(6qf$wd49
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['softwareplace.com']
 
 LOGIN_URL = '/LOGIN/'
 LOGIN_REDIRECT_URL = '/'
@@ -121,9 +125,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
-MEDIA_URL = 'media/'
+STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR/'media'
+
+MEDIA_URL='/media/'
+MEDIA_ROOT=os.path.join(BASE_DIR, 'mediafiles')
+MEDIAFILES_DIR=(os.path.join(BASE_DIR, 'media'),)
+django_heroku.settings(locals())
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
